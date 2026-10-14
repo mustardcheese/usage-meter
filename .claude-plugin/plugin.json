@@ -1,0 +1,211 @@
+{
+  "name": "usage-meter",
+  "version": "0.2.0",
+  "description": "Shows your 5-hour and weekly usage limits and context size as colored gradient bars at the bottom, beside the mode line under the prompt",
+  "author": {
+    "name": "mustardcheese"
+  },
+  "repository": "https://github.com/mustardcheese/usage-meter",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "theme": {
+      "type": "string",
+      "title": "Theme",
+      "description": "Color scheme for the bars",
+      "options": [
+        "classic",
+        "terminal",
+        "everforest-dark",
+        "everforest-light",
+        "gruvbox-dark",
+        "gruvbox-light",
+        "catppuccin-mocha",
+        "catppuccin-macchiato",
+        "catppuccin-frappe",
+        "catppuccin-latte",
+        "tokyo-night",
+        "tokyo-night-storm",
+        "tokyo-night-day",
+        "rose-pine",
+        "rose-pine-moon",
+        "rose-pine-dawn",
+        "solarized-dark",
+        "solarized-light",
+        "nord",
+        "dracula",
+        "one-dark",
+        "kanagawa",
+        "monokai",
+        "ayu-dark",
+        "nightfox"
+      ],
+      "default": "classic"
+    },
+    "shape": {
+      "type": "string",
+      "title": "Bar shape",
+      "description": "How bars are drawn; pill and powerline need a Nerd Font",
+      "options": [
+        "blocks",
+        "shade",
+        "faded",
+        "slanted",
+        "slashes",
+        "dots",
+        "squares",
+        "line",
+        "braille",
+        "ascii",
+        "pill",
+        "powerline"
+      ],
+      "default": "blocks"
+    },
+    "fill": {
+      "type": "string",
+      "title": "Fill",
+      "description": "gradient: each cell colored by its place along the bar; solid: the whole fill in the color for its level",
+      "options": [
+        "gradient",
+        "solid"
+      ],
+      "default": "gradient"
+    },
+    "resetTime": {
+      "type": "string",
+      "title": "Reset time",
+      "description": "Time until a limit resets: countdown (2h0m), clock (14:00), or off",
+      "options": [
+        "countdown",
+        "clock",
+        "off"
+      ],
+      "default": "countdown"
+    },
+    "contextShows": {
+      "type": "string",
+      "title": "Context shows",
+      "description": "What follows the context bar",
+      "options": [
+        "tokens",
+        "percent",
+        "both"
+      ],
+      "default": "tokens"
+    },
+    "label5h": {
+      "type": "string",
+      "title": "5-hour label",
+      "description": "Text before the 5-hour bar; empty hides it",
+      "default": "5h"
+    },
+    "label7d": {
+      "type": "string",
+      "title": "7-day label",
+      "description": "Text before the weekly bars; empty hides it",
+      "default": "7d"
+    },
+    "labelContext": {
+      "type": "string",
+      "title": "Context label",
+      "description": "Text before the context bar; empty hides it",
+      "default": "ctx"
+    },
+    "separator": {
+      "type": "string",
+      "title": "Separator",
+      "description": "Between meters, with a space each side; empty leaves two spaces",
+      "default": "│"
+    },
+    "usageYellowAt": {
+      "type": "number",
+      "title": "Usage yellow at (%)",
+      "description": "Where the 5h and 7d bars reach yellow",
+      "default": 50
+    },
+    "usageOrangeAt": {
+      "type": "number",
+      "title": "Usage orange at (%)",
+      "description": "Where the 5h and 7d bars reach orange",
+      "default": 70
+    },
+    "usageRedAt": {
+      "type": "number",
+      "title": "Usage red at (%)",
+      "description": "Where the 5h and 7d bars reach red",
+      "default": 85
+    },
+    "ctxYellowK": {
+      "type": "number",
+      "title": "Context yellow at (k tokens)",
+      "description": "Context size, in thousands of tokens, where the context bar reaches yellow",
+      "default": 250
+    },
+    "ctxOrangeK": {
+      "type": "number",
+      "title": "Context orange at (k tokens)",
+      "description": "Context size, in thousands of tokens, where the context bar reaches orange",
+      "default": 350
+    },
+    "ctxRedK": {
+      "type": "number",
+      "title": "Context red at (k tokens)",
+      "description": "Context size, in thousands of tokens, where the context bar is red and full",
+      "default": 500
+    },
+    "barWidth": {
+      "type": "number",
+      "title": "Bar width",
+      "description": "Cells per bar; 0 sizes them to the terminal",
+      "default": 0
+    },
+    "show5h": {
+      "type": "boolean",
+      "title": "Show 5-hour",
+      "description": "Show the 5-hour bar",
+      "default": true
+    },
+    "show7d": {
+      "type": "boolean",
+      "title": "Show 7-day",
+      "description": "Show the weekly bars",
+      "default": true
+    },
+    "showContext": {
+      "type": "boolean",
+      "title": "Show context",
+      "description": "Show the context bar",
+      "default": true
+    },
+    "colorGreen": {
+      "type": "string",
+      "title": "Color: green",
+      "description": "Hex like #a7c080 to replace the theme's low color; empty keeps the theme's",
+      "default": ""
+    },
+    "colorYellow": {
+      "type": "string",
+      "title": "Color: yellow",
+      "description": "Hex to replace the theme's yellow; empty keeps the theme's",
+      "default": ""
+    },
+    "colorOrange": {
+      "type": "string",
+      "title": "Color: orange",
+      "description": "Hex to replace the theme's orange; empty keeps the theme's",
+      "default": ""
+    },
+    "colorRed": {
+      "type": "string",
+      "title": "Color: red",
+      "description": "Hex to replace the theme's red; empty keeps the theme's",
+      "default": ""
+    },
+    "colorTrack": {
+      "type": "string",
+      "title": "Color: track",
+      "description": "Hex for the empty part of the bars; empty keeps the theme's",
+      "default": ""
+    }
+  }
+}

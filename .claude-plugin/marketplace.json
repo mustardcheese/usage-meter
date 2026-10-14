@@ -1,0 +1,14 @@
+{
+  "name": "usage-meter",
+  "description": "Claude Code usage and context meter",
+  "owner": {
+    "name": "mustardcheese"
+  },
+  "plugins": [
+    {
+      "name": "usage-meter",
+      "source": "./",
+      "description": "Shows your 5-hour and weekly usage limits and context size as colored gradient bars at the bottom, beside the mode line under the prompt"
+    }
+  ]
+}
